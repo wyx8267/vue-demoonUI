@@ -1,0 +1,9 @@
+{
+  "name": "demoonUI",
+  "version": "0.0.1",
+  "description": "a UI framework",
+  "main": "index.js",
+  "author": "WYX",
+  "license": "MIT",
+  "repository": "git@github.com:wyx8267/vue-demoonUI.git"
+}
