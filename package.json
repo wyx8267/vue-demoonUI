@@ -5,5 +5,8 @@
   "main": "index.js",
   "author": "WYX",
   "license": "MIT",
-  "repository": "git@github.com:wyx8267/vue-demoonUI.git"
+  "repository": "git@github.com:wyx8267/vue-demoonUI.git",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
