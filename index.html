@@ -31,30 +31,23 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-
-        .icon {
-            width: 1em;
-            height: 1em;
-            fill: currentColor;
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <g-button>
+        <g-button :loading="loading1" @click="loading1 = !loading1">
             按钮
         </g-button>
-        <g-button icon="set">
+        <g-button icon="set" :loading="loading2" @click="loading2 = !loading2">
             按钮
         </g-button>
-        <g-button icon="set" icon-position="right">
+        <g-button icon="set" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
             按钮
         </g-button>
     </div>
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1443585_p9ar6f9rgnl.js"></script>
+    <script src="//at.alicdn.com/t/font_1443585_ljy0jpydwbl.js"></script>
 </body>
 
 </html>
