@@ -21,7 +21,7 @@
             margin: 20px;
         }
 
-        html{
+        html {
             --button-height: 32px;
             --font-size: 14px;
             --button-bg: white;
@@ -31,7 +31,8 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-        .box{
+
+        .box {
             margin: 20px;
         }
     </style>
@@ -67,7 +68,7 @@
             <p>{{message}}</p>
             <button @click="message+=1">+1</button>
         </div>
-        <div class="box">
+        <div style="border: 1px solid #000">
             <g-row>
                 <g-col>1</g-col>
                 <g-col>2</g-col>
@@ -91,6 +92,59 @@
                 <g-col span="4">4</g-col>
                 <g-col span="4">4</g-col>
                 <g-col span="16">16</g-col>
+            </g-row>
+            <g-row>
+                <g-col span="2">2</g-col>
+                <g-col span="20" offset="2">20</g-col>
+            </g-row>
+            <g-row>
+                <g-col span="4">4</g-col>
+                <g-col span="16" offset="4">16</g-col>
+            </g-row>
+            <g-row>
+                <g-col span="4">4</g-col>
+                <g-col span="4" offset="2">4</g-col>
+                <g-col span="12" offset="2">12</g-col>
+            </g-row>
+        </div>
+        <hr>
+        <div style="border: 1px solid #000">
+            <g-row gutter="20">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+                <g-col>3</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+                <g-col>3</g-col>
+                <g-col>4</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col span="2">2</g-col>
+                <g-col span="22">22</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col span="4">4</g-col>
+                <g-col span="4">4</g-col>
+                <g-col span="16">16</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col span="2">2</g-col>
+                <g-col span="20" offset="2">20</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col span="4">4</g-col>
+                <g-col span="16" offset="4">16</g-col>
+            </g-row>
+            <g-row gutter="20">
+                <g-col span="4">4</g-col>
+                <g-col span="4" offset="2">4</g-col>
+                <g-col span="12" offset="2">12</g-col>
             </g-row>
         </div>
     </div>
