@@ -32,16 +32,30 @@ export default {
             gutter: 0
         };
     },
+    methods: {
+        createClasses(obj, str = "") {
+            if (!obj) {
+                return [];
+            }
+            let array = [];
+            if (obj.span) {
+                array.push(`col-${str}${obj.span}`);
+            }
+            if (obj.offset) {
+                array.push(`offset-${str}${obj.offset}`);
+            }
+            return array;
+        }
+    },
     computed: {
         colClass() {
             let { span, offset, ipad, narrowPc, pc, widePc } = this;
             return [
-                span && `col-${span}`,
-                offset && `offset-${offset}`,
-                ...(ipad ? [`col-ipad-${ipad.span}`] : []),
-                ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-                ...(pc ? [`col-pc-${pc.span}`] : []),
-                ...(widePc ? [`col-wide-pc-${widePc.span}`] : [])
+                ...this.createClasses({ span, offset }),
+                ...this.createClasses(ipad, "ipad-"),
+                ...this.createClasses(narrowPc, "narrow-pc-"),
+                ...this.createClasses(pc, "pc-"),
+                ...this.createClasses(widePc, "wide-pc-")
             ];
         },
         colStyle() {
@@ -68,7 +82,7 @@ export default {
             margin-left: ($n / 24) * 100%;
         }
     }
-    @media (min-width: 577px) and (max-width: 768px) {
+    @media (min-width: 577px) {
         $class-prefix: col-ipad-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
@@ -82,7 +96,7 @@ export default {
             }
         }
     }
-    @media (min-width: 769px) and (max-width: 992px) {
+    @media (min-width: 769px) {
         $class-prefix: col-narrow-pc-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
@@ -96,7 +110,7 @@ export default {
             }
         }
     }
-    @media (min-width: 993px) and (max-width: 1200px) {
+    @media (min-width: 993px) {
         $class-prefix: col-pc-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
