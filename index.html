@@ -17,10 +17,6 @@
             font-size: var(--font-size);
         }
 
-        #app {
-            margin: 20px;
-        }
-
         html {
             --button-height: 32px;
             --font-size: 14px;
@@ -32,61 +28,38 @@
             --border-color-hover: #666;
         }
 
-        .box {
-            margin: 20px;
-        }
-        .demo{
-            background: #ddd;
+        .demo {
             border: 1px solid #666;
+            min-height: 100px;
+        }
+        .sider{
+            background: #333;
+            width: 150px;
+        }
+        .sider.slide-enter, .sider.slide-leave-to{
+        margin-left: -150px;
+        }
+        .header{
+            background: #999;
             height: 100px;
+        }
+        .footer{
+            background: #ccc;
+            height: 50;
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <div class="box">
-            <g-button :loading="loading1" @click="loading1 = !loading1">
-                按钮
-            </g-button>
-            <g-button icon="set" :loading="loading2" @click="loading2 = !loading2">
-                按钮
-            </g-button>
-            <g-button icon="set" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-                按钮
-            </g-button>
-            <g-button-group>
-                <g-button icon="left">上一页</g-button>
-                <g-button icon="right" icon-position="right">下一页</g-button>
-            </g-button-group>
-        </div>
-        <div class="box">
-            <g-input value="孙三"></g-input>
-            <g-input value="冯硕" disabled></g-input>
-            <g-input value="戴门" readonly></g-input>
-        </div>
-        <div class="box">
-            <g-input value="五" error="姓名不能少于两个字" @change="inputChange"></g-input>
-        </div>
-        <div class="box">
-            <g-input v-model="message"></g-input>
-            <p>{{message}}</p>
-            <button @click="message+=1">+1</button>
-        </div>
-        <g-row>
-            <g-col span="23" offset="1" :ipad="{span:12, offset:12}" :narrow-pc="{span:8, offset:8}">
-                <div class="demo"></div>
-            </g-col>
-            <g-col span="23" offset="1" :ipad="{span:12, offset:12}" :narrow-pc="{span:8, offset:8}">
-                <div class="demo"></div>
-            </g-col>
-            <g-col span="23" offset="1" :ipad="{span:12, offset:12}" :narrow-pc="{span:8, offset:8}">
-                <div class="demo"></div>
-            </g-col>
-            <g-col span="23" offset="1" :ipad="{span:12, offset:12}" :narrow-pc="{span:8, offset:8}">
-                <div class="demo"></div>
-            </g-col>
-        </g-row>
+        <g-layout style="height: 100vh;">
+            <g-sider>sider</g-sider>
+            <g-layout>
+                <g-header>header</g-header>
+                <g-content>content</g-content>
+                <g-footer>footer</g-footer>
+            </g-layout>
+        </g-layout>
     </div>
     <script src="./src/app.js"></script>
 </body>
