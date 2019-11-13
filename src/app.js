@@ -36,16 +36,17 @@ new Vue({
         loading3: false,
         message: 'hi'
     },
+    created(){
+        this.$toast(`<p>段落<strong>加粗</strong></p>`, {
+            closeButton: {
+                text: '关闭',
+                enableHtml: true
+            }
+        })
+    },
     methods: {
         showToast() {
-            this.$toast('showtoast', {
-                closeButton: {
-                    text: 'I know',
-                    callback() {
-                        console.log('用户知道了')
-                    }
-                }
-            })
+            
         }
     }
 })
