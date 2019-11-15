@@ -40,7 +40,17 @@ new Vue({
         
     },
     methods: {
-        showToast() {
+        showToast1() {
+            this.$toast(`<p>已完成的导随数为<strong>${parseInt(Math.random()*3000)}</strong></p>`, {
+                position: 'top',
+                enableHtml: true,
+                closeButton: {
+                    text: '关闭'
+                },
+                autoClose: true
+            })
+        },
+        showToast2() {
             this.$toast(`<p>已完成的导随数为<strong>${parseInt(Math.random()*3000)}</strong></p>`, {
                 position: 'middle',
                 enableHtml: true,
@@ -48,6 +58,16 @@ new Vue({
                     text: '关闭'
                 },
                 autoClose: true
+            })
+        },
+        showToast3() {
+            this.$toast(`<p>已完成的导随数为<strong>${parseInt(Math.random()*3000)}</strong></p>`, {
+                position: 'bottom',
+                enableHtml: true,
+                closeButton: {
+                    text: '关闭'
+                },
+                autoClose: false
             })
         }
     }
