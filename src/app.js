@@ -37,18 +37,18 @@ new Vue({
         message: 'hi'
     },
     created(){
-        this.$toast(`<p>段落<strong>加粗</strong></p>`, {
-            position: 'middle',
-            enableHtml: true,
-            closeButton: {
-                text: '关闭'
-            },
-            autoClose: false
-        })
+        
     },
     methods: {
         showToast() {
-            
+            this.$toast(`<p>已完成的导随数为<strong>${parseInt(Math.random()*3000)}</strong></p>`, {
+                position: 'middle',
+                enableHtml: true,
+                closeButton: {
+                    text: '关闭'
+                },
+                autoClose: true
+            })
         }
     }
 })
