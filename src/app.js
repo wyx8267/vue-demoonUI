@@ -38,10 +38,12 @@ new Vue({
     },
     created(){
         this.$toast(`<p>段落<strong>加粗</strong></p>`, {
+            position: 'middle',
+            enableHtml: true,
             closeButton: {
-                text: '关闭',
-                enableHtml: true
-            }
+                text: '关闭'
+            },
+            autoClose: false
         })
     },
     methods: {
