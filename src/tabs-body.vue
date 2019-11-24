@@ -6,7 +6,8 @@
 
 <script>
     export default {
-        name: 'DemoonTabsBody'
+        name: 'DemoonTabsBody',
+        inject: ['eventBus'],
     }
 </script>
 
