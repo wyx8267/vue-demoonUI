@@ -28,30 +28,27 @@
             --border-color-hover: #666;
         }
 
-        
+        #app{
+            padding-top: 100px;
+            padding-left: 100px;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <g-tabs :selected.sync="selectedTab">
-        <!-- 等价于 <g-tabs selected="selectedTab" @update:selected="selectedTab = $event">-->
-            <g-tabs-head>
-                <template slot="actions">
-                    <button>设置</button>
-                </template>
-                <g-tabs-item name="sii">
-                    <g-icon name="set"></g-icon>Team SII
-                </g-tabs-item>
-                <g-tabs-item name="nii" disabled>Team NII</g-tabs-item>
-                <g-tabs-item name="hii">Team HII</g-tabs-item>
-            </g-tabs-head>
-            <g-tabs-body>
-                <g-tabs-pane name="sii">重生计划</g-tabs-pane>
-                <g-tabs-pane name="nii">时之卷</g-tabs-pane>
-                <g-tabs-pane name="hii">橘色奇迹</g-tabs-pane>
-            </g-tabs-body>
-        </g-tabs>
+        <g-popover>
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点我</button>
+        </g-popover>
+        <g-popover>
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点我</button>
+        </g-popover>
     </div>
     <script src="./src/app.js"></script>
 </body>
