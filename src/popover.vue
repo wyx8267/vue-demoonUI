@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         positionContent() {
-            const {contentWrapper, triggerWrapper} = this.$refs
+            const { contentWrapper, triggerWrapper } = this.$refs;
             document.body.appendChild(contentWrapper);
             let {
                 width,
@@ -39,21 +39,27 @@ export default {
                 top,
                 left
             } = triggerWrapper.getBoundingClientRect();
-            if (this.position === "top") {
-                contentWrapper.style.left = left + window.scrollX + "px";
-                contentWrapper.style.top = top + window.scrollY + "px";
-            } else if (this.position === "bottom") {
-                contentWrapper.style.left = left + window.scrollX + "px";
-                contentWrapper.style.top = top + window.scrollY + height + "px";
-            } else if (this.position === "left") {
-                contentWrapper.style.left = left + window.scrollX + "px";
-                let {height: height2} = contentWrapper.getBoundingClientRect()
-                contentWrapper.style.top = top + window.scrollY + (height - height2)/2 + "px";
-            } else if (this.position === "right") {
-                contentWrapper.style.left = left + window.scrollX + width + "px";
-                let {height: height2} = contentWrapper.getBoundingClientRect()
-                contentWrapper.style.top = top + window.scrollY + (height - height2)/2 + "px";
+            let { height: height2 } = contentWrapper.getBoundingClientRect();
+            let positions = {
+                top: {
+                    top: top + window.scrollY,
+                    left: left + window.scrollX
+                },
+                bottom: {
+                    top: top + window.scrollY + height,
+                    left: left + window.scrollX
+                },
+                left: {
+                    top: top + window.scrollY + (height - height2) / 2,
+                    left: left + window.scrollX
+                },
+                right: {
+                    top: top + window.scrollY + (height - height2) / 2,
+                    left: left + window.scrollX + width
+                },
             }
+            contentWrapper.style.left = positions[this.position].left + 'px'
+            contentWrapper.style.top = positions[this.position].top + 'px'
         },
         onClickDocument(e) {
             if (
@@ -127,7 +133,7 @@ $border-radius: 4px;
         &::after {
             left: 10px;
         }
-        &::before{
+        &::before {
             border-top-color: $border-color;
             top: 100%;
         }
@@ -142,7 +148,7 @@ $border-radius: 4px;
         &::after {
             left: 10px;
         }
-        &::before{
+        &::before {
             border-bottom-color: $border-color;
             bottom: 100%;
         }
@@ -160,7 +166,7 @@ $border-radius: 4px;
             top: 50%;
             transform: translateY(-50%);
         }
-        &::before{
+        &::before {
             border-left-color: $border-color;
             left: 100%;
         }
@@ -177,7 +183,7 @@ $border-radius: 4px;
             top: 50%;
             transform: translateY(-50%);
         }
-        &::before{
+        &::before {
             border-right-color: $border-color;
             right: 100%;
         }
