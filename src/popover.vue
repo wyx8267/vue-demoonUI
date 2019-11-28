@@ -6,7 +6,7 @@
             v-if="visible"
             :class="{[`position-${position}`]:true}"
         >
-            <slot name="content"></slot>
+            <slot name="content" :close="close"></slot>
         </div>
         <span ref="triggerWrapper" style="display: inline-block;">
             <slot></slot>
@@ -170,6 +170,7 @@ $border-radius: 4px;
         margin-top: -10px;
         &::before,
         &::after {
+            border-bottom: none;
             left: 10px;
         }
         &::before {
@@ -186,6 +187,7 @@ $border-radius: 4px;
         &::before,
         &::after {
             left: 10px;
+            border-top: none;
         }
         &::before {
             border-bottom-color: $border-color;
@@ -201,6 +203,7 @@ $border-radius: 4px;
         margin-left: -10px;
         &::before,
         &::after {
+            border-right: none;
             left: 100%;
             top: 50%;
             transform: translateY(-50%);
@@ -218,6 +221,7 @@ $border-radius: 4px;
         margin-left: 10px;
         &::before,
         &::after {
+            border-left: none;
             right: 100%;
             top: 50%;
             transform: translateY(-50%);
