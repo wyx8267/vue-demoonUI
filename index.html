@@ -32,10 +32,11 @@
 
 <body>
     <div id="app" style="padding: 100px;">
-        <g-collapse single>
-            <g-collapse-item title="TeamS">重生计划</g-collapse-item>
-            <g-collapse-item title="TeamN">时之卷</g-collapse-item>
-            <g-collapse-item title="TeamH">橘色奇迹</g-collapse-item>
+        <g-collapse single :selected.sync="selectedTab">
+            <g-collapse-item title="TeamS" name="1">重生计划</g-collapse-item>
+            <g-collapse-item title="TeamN" name="2">时之卷</g-collapse-item>
+            <g-collapse-item title="TeamH" name="3">橘色奇迹</g-collapse-item>
+            {{selectedTab}}
         </g-collapse>
     </div>
     <script src="./src/app.js"></script>
