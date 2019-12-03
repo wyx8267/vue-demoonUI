@@ -1,5 +1,9 @@
 ---
-title: 按钮
+title: Button
 sidebarDepth: 2
 ---
 # 按钮
+<ClientOnly>
+<button-demo-1/>
+<button-demo-2/>
+</ClientOnly>
