@@ -24,12 +24,12 @@ export default {
     data() {
         return {
             content: `
-                <g-button>默认按钮</g-button>
-                <g-button icon="set">默认按钮</g-button>
-                <g-button :loading="true">默认按钮</g-button>
-                <g-button disabled>默认按钮</g-button>
+        <g-button>默认按钮</g-button>
+        <g-button icon="set">默认按钮</g-button>
+        <g-button :loading="true">默认按钮</g-button>
+        <g-button disabled>默认按钮</g-button>
                 `
-                .replace(/\t+| +/g, "")
+                .replace(/^ {8}/gm, "")
                 .trim()
         };
     }

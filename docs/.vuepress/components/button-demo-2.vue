@@ -26,12 +26,12 @@ export default {
     data() {
         return {
             content: `
-                <g-button-group>
-                    <g-button icon="left">上一页</g-button>
-                    <g-button icon="right" icon-position="right" >下一页</g-button>
-                </g-button-group>
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button icon="right" icon-position="right" >下一页</g-button>
+        </g-button-group>
                 `
-                .replace(/^ {16}/gm, '')
+                .replace(/^ {8}/gm, '')
                 .trim()
         };
     }
