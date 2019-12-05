@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" :class="toastClasses">
+    <div class="demoonToast" :class="toastClasses">
         <div class="toast" ref="toast">
             <div class="message">
                 <slot v-if="!enableHtml"></slot>
@@ -18,15 +18,15 @@ export default {
         autoClose: {
             type: [Boolean, Number],
             default: 5,
-            validator(value){
-                return value === false || typeof value === 'number'
-                }
-            },
+            validator(value) {
+                return value === false || typeof value === "number";
+            }
+        },
         closeButton: {
             type: Object,
             default() {
                 return {
-                    text: String,
+                    text: "关闭",
                     callback: undefined
                 };
             }
@@ -49,11 +49,11 @@ export default {
         }
     },
     mounted() {
-        this.uodateStyles();
+        this.updateStyles();
         this.execAutoClose();
     },
     methods: {
-        uodateStyles() {
+        updateStyles() {
             this.$nextTick(() => {
                 this.$refs.line.style.height = `${
                     this.$refs.toast.getBoundingClientRect().height
@@ -118,13 +118,13 @@ $animation-duration: 1s;
         opacity: 1;
     }
 }
-.wrapper{
+.demoonToast {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     &.position-top {
         top: 0;
-        .toast{
+        .toast {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             animation: slide-down $animation-duration;
@@ -132,7 +132,7 @@ $animation-duration: 1s;
     }
     &.position-bottom {
         bottom: 0;
-        .toast{
+        .toast {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             animation: slide-up $animation-duration;
@@ -141,7 +141,7 @@ $animation-duration: 1s;
     &.position-middle {
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
-        .toast{
+        .toast {
             animation: fade-in $animation-duration;
         }
     }
